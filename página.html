@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Par ou Ímpar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Introdução</h1>
+    <p>Com o objetivo de garantir a ímparcialidade e justiça do jogo, é crucial selecionar um intervalo de números pares para as escolhas dos jogadores. Neste texto, vamos explorar a razão por trás dessa escolha e como ela assegura a ímparcialidade.</p>
+
+    <h2>Demonstração e prova do desequilíbrio</h2>
+    <p>Para demonstrar esse desequilíbrio, apresentaremos uma lista das combinações possíveis de números escolhidos por ambos os jogadores em um intervalo ímpar, como no caso de 0 a 10. (Observação: Nessa lista, jogos como 0,1 e 1,0 são considerados como 2 jogos diferentes, mas mesmo se fossem considerados como apenas 1 jogo, ainda haveria alguma injustiça.)</p>
+
+    <pre>
+0	0	par
+0	1	ímpar
+0	2	par
+0	3	ímpar
+0	4	par
+0	5	ímpar
+0	6	par
+0	7	ímpar
+0	8	par
+0	9	ímpar
+0	10	par
+		
+1	0	ímpar
+1	1	par
+1	2	ímpar
+1	3	par
+1	4	ímpar
+1	5	par
+1	6	ímpar
+1	7	par
+1	8	ímpar
+1	9	par
+1	10	ímpar
+		
+2	0	par
+2	1	ímpar
+2	2	par
+2	3	ímpar
+2	4	par
+2	5	ímpar
+2	6	par
+2	7	ímpar
+2	8	par
+2	9	ímpar
+2	10	par
+		
+3	0	ímpar
+3	1	par
+3	2	ímpar
+3	3	par
+3	4	ímpar
+3	5	par
+3	6	ímpar
+3	7	par
+3	8	ímpar
+3	9	par
+3	10	ímpar
+		
+4	0	par
+4	1	ímpar
+4	2	par
+4	3	ímpar
+4	4	par
+4	5	ímpar
+4	6	par
+4	7	ímpar
+4	8	par
+4	9	ímpar
+4	10	par
+		
+5	0	ímpar
+5	1	par
+5	2	ímpar
+5	3	par
+5	4	ímpar
+5	5	par
+5	6	ímpar
+5	7	par
+5	8	ímpar
+5	9	par
+5	10	ímpar
+		
+6	0	par
+6	1	ímpar
+6	2	par
+6	3	ímpar
+6	4	par
+6	5	ímpar
+6	6	par
+6	7	ímpar
+6	8	par
+6	9	ímpar
+6	10	par
+		
+7	0	ímpar
+7	1	par
+7	2	ímpar
+7	3	par
+7	4	ímpar
+7	5	par
+7	6	ímpar
+7	7	par
+7	8	ímpar
+7	9	par
+7	10	ímpar
+		
+8	0	par
+8	1	ímpar
+8	2	par
+8	3	ímpar
+8	4	par
+8	5	ímpar
+8	6	par
+8	7	ímpar
+8	8	par
+8	9	ímpar
+8	10	par
+		
+9	0	ímpar
+9	1	par
+9	2	ímpar
+9	3	par
+9	4	ímpar
+9	5	par
+9	6	ímpar
+9	7	par
+9	8	ímpar
+9	9	par
+9	10	ímpar
+		
+10	0	par
+10	1	ímpar
+10	2	par
+10	3	ímpar
+10	4	par
+10	5	ímpar
+10	6	par
+10	7	ímpar
+10	8	par
+10	9	ímpar
+10	10	par
+		
+121 jogos		
+61 vitórias do par		
+60 vitórias do ímpar
+    </pre>
+
+    <p>O resultado de 121 jogos nesse intervalo mostrou que o número par possui uma taxa de vitória de aproximadamente 50,41% (61/121 * 100), enquanto o número ímpar possui uma taxa de 49,59% (60/121 * 100).</p>
+    <p>Para validar essa lista, utilizamos a lei dos grandes números da probabilidade e o seguinte código em Python que gerou 100.000.000 de simulações do jogo, obtendo um resultado próximo das taxas teóricas.</p>
+    <p>Você pode visualizar o código <a href="https://github.com/tdiogogamer/Simulador-E-Prova-Matematica-De-Par-Ou-Ímpar/blob/main/0-10.py">aqui</a>.</p>
+	<p>Ao executar o código, recebemos seguinte output:<p>
+
+    <pre>
+Número de jogos jogados: 100000000
+Vitórias do par: 50427403 (Porcentagem: 50.43%)
+Vitórias do ímpar: 49572597 (Porcentagem: 49.57%)
+Tempo total: 154.69 segundos
+    </pre>
+
+    <p>Portanto, fica comprovado que utilizar um intervalo ímpar resulta em uma injustiça no jogo.</p>
+
+    <h2>Demonstração e prova do equilíbrio</h2>
+    <p>Agora, precisamos provar que utilizar um intervalo par é justo. Vamos seguir o mesmo princípio de lista de combinações e realizar 100.000.000 de simulações com um intervalo de 1 a 10.</p>
+	<p>Lista das possibilidades com um intervalo par:<p>
+	
+    <pre>
+1	1	par
+1	2	ímpar
+1	3	par
+1	4	ímpar
+1	5	par
+1	6	ímpar
+1	7	par
+1	8	ímpar
+1	9	par
+1	10	ímpar
+		
+2	1	ímpar
+2	2	par
+2	3	ímpar
+2	4	par
+2	5	ímpar
+2	6	par
+2	7	ímpar
+2	8	par
+2	9	ímpar
+2	10	par
+		
+3	1	par
+3	2	ímpar
+3	3	par
+3	4	ímpar
+3	5	par
+3	6	ímpar
+3	7	par
+3	8	ímpar
+3	9	par
+3	10	ímpar
+		
+4	1	ímpar
+4	2	par
+4	3	ímpar
+4	4	par
+4	5	ímpar
+4	6	par
+4	7	ímpar
+4	8	par
+4	9	ímpar
+4	10	par
+		
+		
+5	1	par
+5	2	ímpar
+5	3	par
+5	4	ímpar
+5	5	par
+5	6	ímpar
+5	7	par
+5	8	ímpar
+5	9	par
+5	10	ímpar
+		
+6	1	ímpar
+6	2	par
+6	3	ímpar
+6	4	par
+6	5	ímpar
+6	6	par
+6	7	ímpar
+6	8	par
+6	9	ímpar
+6	10	par
+		
+7	1	par
+7	2	ímpar
+7	3	par
+7	4	ímpar
+7	5	par
+7	6	ímpar
+7	7	par
+7	8	ímpar
+7	9	par
+7	10	ímpar
+		
+8	1	ímpar
+8	2	par
+8	3	ímpar
+8	4	par
+8	5	ímpar
+8	6	par
+8	7	ímpar
+8	8	par
+8	9	ímpar
+8	10	par
+		
+9	1	par
+9	2	ímpar
+9	3	par
+9	4	ímpar
+9	5	par
+9	6	ímpar
+9	7	par
+9	8	ímpar
+9	9	par
+9	10	ímpar
+		
+10	1	ímpar
+10	2	par
+10	3	ímpar
+10	4	par
+10	5	ímpar
+10	6	par
+10	7	ímpar
+10	8	par
+10	9	ímpar
+10	10	par
+
+100 jogos
+50 vitórias do par
+50 vitórias do ímpar
+    </pre>
+
+    <p>Após analisar essa lista, fica evidente que tanto o número par quanto o número ímpar possuem uma chance de vitória de 50%.</p>
+    <p>Para validar as porcentagens, utilizamos o seguinte programa em Python com a mesma quantidade de simulações.</p>
+    <p>Você pode visualizar o código <a href="https://github.com/tdiogogamer/Simulador-E-Prova-Matematica-De-Par-Ou-Ímpar/blob/main/1-10.py">aqui</a>.</p>
+	<p>Ao executar o código, recebemos seguinte output:<p>
+	
+    <pre>
+Número de jogos jogados: 100000000
+Vitórias do par: 49994721 (Porcentagem: 49.99%)
+Vitórias do ímpar: 50005279 (Porcentagem: 50.01%)
+Tempo total: 166.11 segundos
+    </pre>
+
+    <p>Dessa forma, podemos concluir que utilizar um intervalo par é, de fato, justo.</p>
+
+    <h2>Conclusão</h2>
+    <p>Podemos concluir que o jogo par ou ímpar pode ser um jogo justo caso seja jogado em um intervalo par.</p>
+
+    <h2>Teste o seu intervalo personalizado!</h2>
+    <p>Você pode utilizar <a href="https://github.com/tdiogogamer/Simulador-E-Prova-Matematica-De-Par-Ou-Ímpar/releases/tag/Intervalo_Personalizado">esse programa</a> que criamos para validar um certo intervalo.</p>
+
+    <p>Lembre-se que segundo a lei dos grandes números da probabilidade, você deve colocar um valor grande de simulações, como nós fizemos.</p>
+
+    <h2>Código-fonte de todos os programas utilizados</h2>
+    <p>Na seguinte <a href="https://github.com/tdiogogamer/Simulador-E-Prova-Matematica-De-Par-Ou-Ímpar/tree/main">página do GitHub</a> você pode encontrar o código-fonte de todos os programas utilizados e disponibilizados, incluindo essa página que você está lendo agora.</p>
+</body>
+</html>
